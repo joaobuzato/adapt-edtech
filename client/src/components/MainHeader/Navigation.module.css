@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  align-items: start;
+  min-width: 100%;
+  min-height: 6vh;
+  background-color: #282a35;
+  justify-content: end;
+}
+
+.button {
+  padding: 3px;
+  margin: 3px;
+}
