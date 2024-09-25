@@ -101,6 +101,7 @@ const saveItem = async (
       onSuccessCallback(response);
     })
     .catch((error) => {
+      console.log(error);
       alert("Alguma coisa deu errado.");
     });
 };

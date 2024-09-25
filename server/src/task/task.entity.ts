@@ -1,5 +1,11 @@
 import { Project } from 'src/project/project.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  CreateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Task {
@@ -12,10 +18,10 @@ export class Task {
   @Column('text')
   description: string;
 
-  @Column('date')
-  expirationDate: Date;
+  @Column({ length: 10, default: '2096-01-02' })
+  expirationDate: string;
 
-  @Column({ length: 20 })
+  @Column({ length: 20, default: 'Pendente' })
   status: string;
 
   @ManyToOne(() => Project, (project) => project.tasks)

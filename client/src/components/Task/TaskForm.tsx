@@ -32,17 +32,17 @@ export default function TaskForm(props: {
       },
     },
     {
-      id: "expiration_date",
+      id: "expirationDate",
       label: "Data de Vencimento:",
       type: "date",
       placeholder: "",
       value: props.task?.expirationDate ?? "",
       validation: {
-        required:true
+        required: true,
       },
     },
     {
-      id: "project_id",
+      id: "projectId",
       label: "projectId",
       hidden: true,
       type: "text",

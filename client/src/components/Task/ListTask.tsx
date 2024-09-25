@@ -60,9 +60,7 @@ export default function ListTask(props: {
       () => {}
     );
   };
-  const statusUpdateHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const taskId = Number(event.currentTarget.value);
-    const status = "Pendente";
+  const statusUpdateHandler = (taskId: number, status: string) => {
     updateStatus(taskId, status);
   };
 
@@ -77,9 +75,9 @@ export default function ListTask(props: {
         form
       ) : (
         <>
-          <h3>Lista de portas existentes</h3>
+          <h3>Lista de tarefas existentes</h3>
           <Button onClick={() => openForm()} value={"Add New Task"}>
-            Adicionar uma nova porta
+            Adicionar uma nova tarefa
           </Button>
           <table className={styles.table}>
             <thead>

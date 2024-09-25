@@ -17,16 +17,18 @@ const task_controller_1 = require("./task/task.controller");
 const task_providers_1 = require("./task/task.providers");
 const task_service_1 = require("./task/task.service");
 const task_module_1 = require("./task/task.module");
+const user_controller_1 = require("./user/user.controller");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply().forRoutes(project_controller_1.ProjectController);
+        consumer.apply().forRoutes(task_controller_1.TaskController);
     }
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [project_module_1.ProjectModule, task_module_1.TaskModule],
-        controllers: [project_controller_1.ProjectController, task_controller_1.TaskController],
+        controllers: [project_controller_1.ProjectController, task_controller_1.TaskController, user_controller_1.UserController],
         providers: [
             ...project_providers_1.projectProviders,
             ...task_providers_1.taskProviders,

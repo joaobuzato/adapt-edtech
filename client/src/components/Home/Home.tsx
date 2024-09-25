@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <h2 className={styles.title}>Gerenciador de Projetos</h2>
       <p className={styles.paragraph}>
-        {`Esta é a página principal da Gerenciador de Projetos, um projeto pessoal de João Pedro Buzato, que visa ser uma forma fácil de se desenvolver um jogo em texto. `}
+        {`O Gerenciador de Projetos é um projeto que tem como objetivo auxiliar o usuário a organizar suas tarefas de forma eficiente. `}
       </p>
     </>
   );

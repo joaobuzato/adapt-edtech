@@ -10,6 +10,7 @@ export default function TaskItem(props: {
   onEdit: Function;
   onStatusUpdate: Function;
 }) {
+  const [status, setStatus] = React.useState(props.task.status);
   const editHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     props.onEdit(event);
   };
@@ -18,14 +19,20 @@ export default function TaskItem(props: {
   };
 
   const statusUpdateHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    props.onStatusUpdate(event);
+    const status = event.target.value;
+    setStatus(status);
+    props.onStatusUpdate(props.task.id, status);
   };
 
   return (
     <tr>
       <td>{props.task.title}</td>
       <td className={styles.actions}>
-        <select className={styles.select} onChange={statusUpdateHandler}>
+        <select
+          className={styles.select}
+          value={status}
+          onChange={statusUpdateHandler}
+        >
           <option value="Pendente">Pendente</option>
           <option value="Em progresso">Em progresso</option>
           <option value="Concluído">Concluído</option>

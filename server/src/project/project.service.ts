@@ -25,11 +25,11 @@ export class ProjectService {
     }
     return this.taskRepository.find({ where: { project } });
   }
-  async create(project: Project): Promise<Project> {
-    return this.projectRepository.save(project);
+  async create(project: Project) {
+    return this.projectRepository.insert(project);
   }
-  async update(project: Project): Promise<Project> {
-    return this.projectRepository.save(project);
+  async update(project: Project) {
+    return this.projectRepository.update({ id: project.id }, project);
   }
   async delete(id: string): Promise<void> {
     await this.projectRepository.delete(id);
