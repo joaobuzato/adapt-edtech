@@ -18,7 +18,7 @@ export default function Menu(props: {
           value="listProjects"
           onClick={setActivePageHandler}
         >
-          Projetos
+          <span>Projetos</span>
         </button>
         <button
           className={props.activePage === "about" ? styles.selected : ""}
@@ -26,7 +26,7 @@ export default function Menu(props: {
           value="about"
           onClick={setActivePageHandler}
         >
-          Sobre
+          <span>Sobre</span>
         </button>
       </aside>
     </>

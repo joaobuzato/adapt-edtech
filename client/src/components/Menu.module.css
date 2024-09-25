@@ -10,9 +10,12 @@
   all: unset;
   background-color: #e7e9eb;
   min-width: 100%;
-  text-align: center;
+  text-align: start;
   font-size: 17px;
   min-height: 40px;
+}
+.aside button span {
+  padding-left: 40px;
 }
 .aside button:hover {
   filter: brightness(85%);
@@ -20,5 +23,5 @@
 }
 
 .selected {
-  background: #04aa6d !important;
+  background: #40c695 !important;
 }

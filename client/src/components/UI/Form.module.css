@@ -1,3 +1,13 @@
 .form {
   padding: 20px;
 }
+
+.form button {
+  all: unset;
+  background-color: #40c695;
+  color: white;
+  padding: 10px;
+  margin: 0 12px 0 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
