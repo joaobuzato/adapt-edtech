@@ -1,8 +1,5 @@
 # Gerenciador de Projetos
 
-Projeto em React de um gestor da Task Game, que possui as funcionalidades de cadastrar, editar, listar e deletar todos os itens da Task Game.
-O objetivo final é poder construir um jogo em texto sem codificar, e no fim poder jogá-lo.
+## Descrição
 
-O projeto usa a task-game-api para construir as funcionalidades.
-
-> =)
+Este projeto é um gerenciador de projetos, onde é possível criar, editar e excluir projetos, além de adicionar tarefas a cada projeto.
