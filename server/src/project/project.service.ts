@@ -12,4 +12,7 @@ export class ProjectService {
   async findAll(): Promise<Project[]> {
     return this.projectRepository.find();
   }
+  async findById(id: number): Promise<Project | null> {
+    return this.projectRepository.findOneBy({ id });
+  }
 }

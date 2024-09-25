@@ -1,17 +1,26 @@
-import { Controller, Delete, Get, Patch, Post, Put } from '@nestjs/common';
+import {
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { ProjectService } from './project.service';
+import { Project } from './project.entity';
 
 @Controller('/projects')
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
 
   @Get()
-  getAllProjects(): string {
+  async getAllProjects(): Promise<Project[]> {
     return this.projectService.findAll();
   }
   @Get(':id')
-  getProjectById(): string {
-    return this.projectService.findAll();
+  getProjectById(@Param('id') id: string): Promise<Project | null> {
+    return this.projectService.findById(Number(id));
   }
   @Post()
   createProject() {

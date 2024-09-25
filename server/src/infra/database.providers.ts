@@ -1,4 +1,6 @@
 import { DataSource } from 'typeorm';
+import { config } from 'dotenv';
+config();
 
 export const databaseProviders = [
   {
@@ -6,6 +8,7 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'mysql',
+        database: process.env.DB_NAME,
         host: process.env.DB_HOST,
         port: Number(process.env.DB_PORT),
         username: process.env.DB_USERNAME,

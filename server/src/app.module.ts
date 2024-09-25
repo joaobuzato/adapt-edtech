@@ -3,14 +3,16 @@ import { ProjectController } from './project/project.controller';
 import { ProjectService } from './project/project.service';
 import { AuthMiddleware } from './auth.middleware';
 import { ProjectModule } from './project/project.module';
+import { projectProviders } from './project/project.providers';
+import { databaseProviders } from './infra/database.providers';
 
 @Module({
   imports: [ProjectModule],
   controllers: [ProjectController],
-  providers: [ProjectService],
+  providers: [...projectProviders, ...databaseProviders, ProjectService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(AuthMiddleware).forRoutes(ProjectController);
+    consumer.apply().forRoutes(ProjectController);
   }
 }

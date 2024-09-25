@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const project_controller_1 = require("./project.controller");
-const project_service_1 = require("./project.service");
-const auth_middleware_1 = require("./auth.middleware");
+const project_controller_1 = require("./project/project.controller");
+const project_service_1 = require("./project/project.service");
+const project_module_1 = require("./project/project.module");
+const project_providers_1 = require("./project/project.providers");
+const database_providers_1 = require("./infra/database.providers");
 let AppModule = class AppModule {
     configure(consumer) {
-        consumer.apply(auth_middleware_1.AuthMiddleware).forRoutes(project_controller_1.ProjectController);
+        consumer.apply().forRoutes(project_controller_1.ProjectController);
     }
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
-        controllers: [app_controller_1.AppController, project_controller_1.ProjectController],
-        providers: [app_service_1.AppService, project_service_1.ProjectService],
+        imports: [project_module_1.ProjectModule],
+        controllers: [project_controller_1.ProjectController],
+        providers: [...project_providers_1.projectProviders, ...database_providers_1.databaseProviders, project_service_1.ProjectService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
