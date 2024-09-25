@@ -1,17 +1,17 @@
 import { Controller, Delete, Get, Patch, Post, Put } from '@nestjs/common';
 import { ProjectService } from './project.service';
 
-@Controller('projects')
+@Controller('/projects')
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
 
   @Get()
   getAllProjects(): string {
-    return this.projectService.getHello();
+    return this.projectService.findAll();
   }
   @Get(':id')
   getProjectById(): string {
-    return this.projectService.getHello();
+    return this.projectService.findAll();
   }
   @Post()
   createProject() {

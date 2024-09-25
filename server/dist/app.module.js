@@ -10,14 +10,20 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const project_controller_1 = require("./project.controller");
+const project_service_1 = require("./project.service");
+const auth_middleware_1 = require("./auth.middleware");
 let AppModule = class AppModule {
+    configure(consumer) {
+        consumer.apply(auth_middleware_1.AuthMiddleware).forRoutes(project_controller_1.ProjectController);
+    }
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [app_controller_1.AppController, project_controller_1.ProjectController],
+        providers: [app_service_1.AppService, project_service_1.ProjectService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

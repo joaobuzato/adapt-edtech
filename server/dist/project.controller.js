@@ -19,16 +19,57 @@ let ProjectController = class ProjectController {
     getAllProjects() {
         return this.projectService.getHello();
     }
+    getProjectById() {
+        return this.projectService.getHello();
+    }
+    createProject() {
+    }
+    updateProject() {
+    }
+    deleteProject() {
+    }
+    patchProject() {
+    }
 };
 exports.ProjectController = ProjectController;
 __decorate([
-    (0, common_1.Get)('/projects'),
+    (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], ProjectController.prototype, "getAllProjects", null);
+__decorate([
+    (0, common_1.Get)(':id'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], ProjectController.prototype, "getProjectById", null);
+__decorate([
+    (0, common_1.Post)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], ProjectController.prototype, "createProject", null);
+__decorate([
+    (0, common_1.Put)(':id'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], ProjectController.prototype, "updateProject", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], ProjectController.prototype, "deleteProject", null);
+__decorate([
+    (0, common_1.Patch)(':id'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], ProjectController.prototype, "patchProject", null);
 exports.ProjectController = ProjectController = __decorate([
-    (0, common_1.Controller)(),
+    (0, common_1.Controller)('/projects'),
     __metadata("design:paramtypes", [project_service_1.ProjectService])
 ], ProjectController);
 //# sourceMappingURL=project.controller.js.map
