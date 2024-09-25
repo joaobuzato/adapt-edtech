@@ -24,6 +24,9 @@ export class Task {
   @Column({ length: 20, default: 'Pendente' })
   status: string;
 
+  @Column()
+  projectId: string;
+
   @ManyToOne(() => Project, (project) => project.tasks)
   project: Project;
 }

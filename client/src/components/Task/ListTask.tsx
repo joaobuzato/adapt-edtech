@@ -19,7 +19,7 @@ export default function ListTask(props: {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
-    getAllItems<Task>("/tasks", { projectId: String(props.projectId) }).then(
+    getAllItems<Task>(`/projects/${String(props.projectId)}/tasks`).then(
       (response) => {
         setTasks(response);
       }

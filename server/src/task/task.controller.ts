@@ -8,12 +8,14 @@ import {
   Post,
   Put,
   Query,
+  Logger,
 } from '@nestjs/common';
 import { TaskService } from './task.service';
 import { Task } from './task.entity';
 
 @Controller('/tasks')
 export class TaskController {
+  private readonly logger = new Logger(TaskController.name);
   constructor(private readonly taskService: TaskService) {}
 
   @Get()
