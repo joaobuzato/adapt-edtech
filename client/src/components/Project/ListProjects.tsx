@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Project } from "../../types";
 import ProjectForm from "./ProjectForm";
-import styles from "./ListProject.module.css";
+import styles from "./ListProjects.module.css";
 import { deleteItem, getAllItems } from "../../clients/tasksApiClient";
 import ProjectItem from "./ProjectItem";
 import Button from "../UI/Button";
