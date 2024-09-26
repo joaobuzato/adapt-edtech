@@ -5,7 +5,7 @@ import { ProjectService } from './project.service';
 import { taskProviders } from 'src/task/task.providers';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [DatabaseModule.forRoot()],
   providers: [...projectProviders, ...taskProviders, ProjectService],
 })
 export class ProjectModule {}
