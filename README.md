@@ -10,7 +10,8 @@ Tecnical Test to Adapt Edtech
 
 2. Run `cd server`
 3. Run `npm install`
-4. Run `npm start`
+4. Run `npm run database:create`
+5. Run `npm start`
 
 ### Client
 
