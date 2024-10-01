@@ -1,6 +1,6 @@
-# adapt-edtech
+# fullstack-app
 
-Tecnical Test to Adapt Edtech
+App using NestJS on the banckend and React on the Frontend.
 
 ## How to run the project
 
