@@ -1,6 +1,6 @@
 # fullstack-app
 
-App using NestJS on the banckend and React on the Frontend.
+App using NestJS on the backend and React on the Frontend.
 
 ## How to run the project
 
